@@ -31,5 +31,10 @@ namespace Riode_WebUI.Controllers
             return View();
         }
 
+        public IActionResult Faq()
+        {
+            return View();
+        }
+
     }
 }

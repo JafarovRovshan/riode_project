@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Riode_WebUI.Controllers
 {
-    public class MyAccountController : Controller
+    public class BlogController : Controller
     {
-        public IActionResult Profile()
+        public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult WishList()
+        public IActionResult Details()
         {
             return View();
         }
