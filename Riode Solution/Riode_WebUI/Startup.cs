@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Riode_WebUI.Models.DataContexts;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -48,6 +49,14 @@ namespace Riode_WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGet("/coming-soon.html", async (context) =>
+                 {
+                     using (var sr = new StreamReader("views/static/coming-soon.html"))
+                     {
+                         context.Response.ContentType = "text/html";
+                         await context.Response.WriteAsync(sr.ReadToEnd());
+                     }
+                 });
                 endpoints.MapControllerRoute("default", "{controller=home}/{action=index}/{id?}");
             });
         }
